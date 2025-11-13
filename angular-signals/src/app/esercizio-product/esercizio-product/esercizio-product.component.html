@@ -1,7 +1,21 @@
 <h2>Inventory</h2>
 <button (click)="addProduct()">Add Product</button>
 <button (click)="removeProduct()">Remove Product</button>
+
+<!-- <pre> è un tag HTML che significa preformatted text (testo preformattato).
+
+Tutti gli spazi, ritorni a capo e indentazioni all’interno del <pre> vengono rispettati così come li scrivi.
+
+Utile per mostrare array o oggetti leggibili, perché mantiene l’allineamento. -->
 <pre>
+
+    <!-- | json è un pipe di Angular che converte un oggetto o array in stringa JSON leggibile.
+        
+    Differenza rispetto a fare solo {{ products() }}:
+
+    Senza | json: Angular prova a convertire l’array in stringa con .toString(), 
+    
+    quindi otterresti Mela,Pera,Banana (tutto su una riga senza virgolette). -->
   {{ products() | json }}
 </pre>
 
