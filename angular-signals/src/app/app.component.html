@@ -1,1 +1,7 @@
-<router-outlet />
+<!-- <router-outlet /> -->
+
+<button (click)="startaCounter()">starta counter</button>
+<hr>
+@if (showCounter) {
+    <app-counter></app-counter>
+}
