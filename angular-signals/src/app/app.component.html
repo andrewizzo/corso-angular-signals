@@ -1,1 +1,38 @@
 <router-outlet />
+<h1> Currency Converter</h1>
+<label>Amount</label>
+<input type="number" [formControl]="amount">
+
+<hr>
+
+<label>Currency</label>
+
+<app-option-selector 
+  [options]="currencies"
+  [(selected)]="currency"
+></app-option-selector>
+<!-- <select [formControl]="currency"> -->
+    <!-- il track option : Serve per dire ad Angular come identificare ogni elemento nella lista.
+    Così Angular non ricostruisce tutti gli elementi, ma solo quelli cambiati. -->
+  <!-- @for(option of currencies; track option) {
+    <option value="{{ option }}">{{ option }}</option>
+  }
+</select> -->
+
+<app-currency-coverter 
+    [amount]="amount.value!" 
+    [currency]="currency()"
+    (refreshRequired)="refreshData()">
+
+</app-currency-coverter>
+
+<app-currency-coverter 
+    [amount]="amount.value!" 
+    [currency]="currency()"
+    (refreshRequired)="refreshData()">
+
+</app-currency-coverter>
+
+<div #myRef></div>
+
+<button (click)="stopRefresh()">Stop Refresh Events</button>
